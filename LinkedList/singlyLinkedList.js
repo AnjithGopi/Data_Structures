@@ -31,6 +31,16 @@ class LinkedList{
         this.tail=node
     }
 
+    prepend(value){
+        const node=new Node(value)
+            if(this.head==null){
+                this.head=node
+            }else{
+                node.next =this.head
+                this.head=node
+            }
+        
+    }
 
     print(){
 
@@ -54,5 +64,7 @@ const list= new LinkedList()
 list.append(10)
 list.append(20)
 list.append(30)
+
+list.prepend(1)
 
 list.print()
