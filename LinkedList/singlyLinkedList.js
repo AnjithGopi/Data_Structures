@@ -42,6 +42,24 @@ class LinkedList{
         
     }
 
+
+
+    sum(){
+        if(this.head==null){
+            console.log("sum is 0")
+        }else{
+            let temp=this.head
+
+            let result=0
+            while(temp!=null){
+                result=result+temp.value
+                temp=temp.next
+            }
+
+            console.log("Result:",result)
+        }
+    }
+
     print(){
 
         
@@ -66,5 +84,6 @@ list.append(20)
 list.append(30)
 
 list.prepend(1)
+list.sum()
 
 list.print()
