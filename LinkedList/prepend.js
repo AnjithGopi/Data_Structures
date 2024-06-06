@@ -1,8 +1,6 @@
 
 
-
-// write a singley linked list and append the values
-
+// write a singley linked list and append the values 10 ,20,30 and prepend the value 5
 
 
 
@@ -10,6 +8,7 @@ class Node{
     constructor(value){
         this.value=value
         this.next=null
+        
     }
 }
 
@@ -21,15 +20,14 @@ class LinkedList{
         this.tail=null
     }
 
-
     append(value){
-        const node=new Node(value)
-
+        const node = new Node(value)
         if(this.head==null){
             this.head=node
         }else{
             this.tail.next=node
         }
+
         this.tail=node
     }
 
@@ -41,7 +39,6 @@ class LinkedList{
         }else{
             node.next=this.head
         }
-
         this.head=node
     }
 
@@ -57,17 +54,24 @@ class LinkedList{
             }
         }
     }
+
+
+
 }
 
 
 
-const list= new LinkedList()
+const list = new LinkedList()
 
-list.append(12)
-list.append(13)
-list.append(14)
-list.append(15)
 
-list.prepend(10)
+
+list.append(10)
+list.append(20)
+list.append(30)
+
+
+list.prepend(5)
 
 list.print()
+
+
