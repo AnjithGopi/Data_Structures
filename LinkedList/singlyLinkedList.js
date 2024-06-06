@@ -5,6 +5,7 @@ class Node{
     constructor(value){
         this.value=value
         this.next=null
+        this.prev = null
     }
 
 
@@ -37,6 +38,7 @@ class LinkedList{
                 this.head=node
             }else{
                 node.next =this.head
+                // this.head.prev = node
                 this.head=node
             }
         
@@ -87,3 +89,9 @@ list.prepend(1)
 list.sum()
 
 list.print()
+
+
+
+
+
+
