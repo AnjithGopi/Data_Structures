@@ -53,17 +53,46 @@ class LinkedList{
             }
             temp.next=node
 
-           this.size++
+           
 
             
         }
+        this.size++
     }
+
+
+
 
 
     getsize(){
 
         return this.size
 
+    }
+
+
+    insert(value,index){
+
+        
+        if (index < 0 || index > this.size) {
+            console.log("Index out of bounds");
+            return;
+        }
+
+        const node = new Node(value);
+
+        if (index === 0) {
+            node.next = this.head;
+            this.head = node;
+        } else {
+            let temp = this.head;
+            for (let i = 0; i < index - 1; i++) {
+                temp = temp.next;
+            }
+            node.next = temp.next;
+            temp.next = node;
+        }
+        this.size++;
     }
 
 
@@ -91,9 +120,11 @@ const list =new LinkedList()
 
 list.prepend(10)
 list.prepend(20)
-list.prepend(30)
+ list.prepend(30)
 list.append(15)
 list.append(13)
+
+list.insert(21,2)
 
 console.log("size:",list.getsize())
 
