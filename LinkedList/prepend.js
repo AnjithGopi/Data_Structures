@@ -32,16 +32,6 @@ class LinkedList{
     }
 
 
-    prepend(value){
-        const node= new Node(value)
-        if(this.head==null){
-            this.head=node
-        }else{
-            node.next=this.head
-        }
-        this.head=node
-    }
-
 
     print(){
         if(this.head==null){
@@ -70,7 +60,7 @@ list.append(20)
 list.append(30)
 
 
-list.prepend(5)
+
 
 list.print()
 
