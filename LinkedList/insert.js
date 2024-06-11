@@ -11,14 +11,17 @@ class Node{
         this.value=value
         this.next=null
     }
-}
 
+   
+}
 
 
 class LinkedList{
     constructor(){
+
         this.head=null
         this.size=0
+        
     }
 
 
@@ -29,68 +32,149 @@ class LinkedList{
 
 
     append(value){
-        const node= new Node(value)
+        const node=new Node(value)
 
         if(this.isEmpty()){
             this.head=node
         }else{
-            let temp= this.head
-            while(temp.next){
+
+            let temp=this.head
+            while(temp.next!==null){
                 temp=temp.next
             }
             temp.next=node
+            
         }
 
-
         this.size++
+        
+    }
+
+
+    sum(){
+
+
+        if(this.isEmpty()){
+            console.log("Sum:0")
+        }else{
+
+            let temp=this.head
+            let sum=0
+
+            while(temp){
+                sum+=temp.value
+                temp=temp.next
+            }
+
+            console.log("sum:",sum)
+
+           
+
+
+        }
     }
 
 
     insert(value,index){
-        if(index<0||index>this.size){
-            console.log("out of bound")
-            return
+
+       if(index<0||index>this.size){
+        console.log("index Out of bound")
+        return
+       }
+
+       if(index===0){
+         node.next=this.head
+         this.head=node
+       }else{
+         let node=new Node(value)
+         let temp=this.head
+         for(let i=0;i<index-1;i++){
+            temp=temp.next
+         }
+         node.next=temp.next
+         temp.next=node
+       }
+
+       this.size++
+
+      
+
+      
+    }
+
+
+
+
+    search(value){
+        if(this.isEmpty()){
+            console.log("The list is empty")
         }
 
-        if(index==0){
-            node.next=this.head
-            this.head=node
-        }else{
+        let i=0
+        let temp=this.head
+        while(temp){
+            if(temp.value===value){
+                console.log("value found at index:",i)
+                return i
+            }
 
-            const node=new Node(value)
+            temp=temp.next
+            i++
+        }
+    }
+
+    
+        
+       
+
+
+
+   
+
+
+    remove(index){
+        if(index<0||index>this.size){
+            return null
+        }
+
+        
+        if(index===0){
+        
+            this.head=this.head.next
+        }else{
             let temp=this.head
             for(let i=0;i<index-1;i++){
-
                 temp=temp.next
             }
 
-            node.next=temp.next
-            temp.next=node
+            temp.next=temp.next.next
         }
+        this.size--
     }
+
+
+   
+
+
 
 
     print(){
         if(this.isEmpty()){
-            console.log("The list is empty")
+            console.log("List is empty")
         }else{
             let temp=this.head
             let values=""
             while(temp){
-                values+=`${temp.value} `
+                values+=`${temp.value}  `
                 temp=temp.next
             }
-            
-        console.log(values)
-    }
 
-           
+            console.log(values)
         }
-
-
-
-
+    }
 }
+
+
 
 
 
@@ -99,5 +183,10 @@ const list=new LinkedList()
 list.append(10)
 list.append(20)
 list.append(30)
-list.insert(2,2)
+list.insert(5,2)
+
+// list.remove(1)
+list.sum()
+
 list.print()
+list.search(5)

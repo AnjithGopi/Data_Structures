@@ -11,7 +11,7 @@
 
 function pivotInteger(n){
 
-    // finding the total sum of elements from 1 to n
+   
 
     let totalSum=(n*(n+1))/2
     let leftSum=0
@@ -38,5 +38,5 @@ function pivotInteger(n){
 
 
 
-const fn=pivotInteger(8) //here the pivot Index is 6
+const fn=pivotInteger(8) //here the pivot Index is 6  program is executed in timecomplexity of O(n)
 console.log(fn)
