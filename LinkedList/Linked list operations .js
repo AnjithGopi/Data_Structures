@@ -127,8 +127,9 @@ class LinkedList{
             let temp=this.head
             for(let i=0;i<index-1;i++){
                 temp=temp.next
-                temp.next=temp.next.next
+               
             }
+            temp.next=temp.next.next
             this.size--
         }
 

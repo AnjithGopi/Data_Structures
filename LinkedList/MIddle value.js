@@ -84,7 +84,7 @@ class LinkedList{
         }
 
         
-          prev.next=slow.next
+        prev.next=slow.next
 
 
        
