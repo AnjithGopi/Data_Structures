@@ -70,6 +70,33 @@ class LinkedList{
     }
 
 
+    deleteMiddle(){
+
+        let slow=this.head
+        let fast=this.head
+        let prev=null
+
+        while(fast && fast.next){
+
+            fast=fast.next.next
+            prev=slow
+            slow=slow.next
+        }
+
+        
+          prev.next=slow.next
+
+
+       
+
+       
+        this.size--
+
+        return
+
+    }
+
+
 
     print(){
         if(this.isEmpty()){
@@ -99,6 +126,9 @@ for(let  i=0;i<=10;i++){
     list.append(i*10)
 }
 
+list.print()
+
 list.middle()
+list.deleteMiddle()
 
 list.print()
