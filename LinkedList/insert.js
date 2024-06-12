@@ -123,6 +123,21 @@ class LinkedList{
         }
     }
 
+
+
+    reverse(){
+
+        let prev=null
+        let temp=this.head
+        while(temp){
+            let next=temp.next
+            temp.next=prev
+            prev=temp
+            temp=next
+        }
+
+      this.head=prev
+    }
     
         
        
@@ -183,10 +198,9 @@ const list=new LinkedList()
 list.append(10)
 list.append(20)
 list.append(30)
-list.insert(5,2)
 
-// list.remove(1)
-list.sum()
 
 list.print()
 list.search(5)
+list.reverse()
+list.print()
