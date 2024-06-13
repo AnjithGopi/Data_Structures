@@ -34,9 +34,9 @@ class LinkedList{
 
 
     append(value){ // appending the values
+
         const node =new Node(value)
-
-
+        
         if(this.isEmpty()){
             this.head=node
         }else{
@@ -180,7 +180,7 @@ class LinkedList{
 
 
     hasCycle(){ // checking whether the list has cycle
-        
+
         if(this.isEmpty()){
             return 
         }else{
