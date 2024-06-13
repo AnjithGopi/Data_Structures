@@ -21,5 +21,4 @@ function factorial(n){
 
 
 const fn=factorial(5) // output=120
-
 console.log(fn)
