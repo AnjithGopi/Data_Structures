@@ -179,6 +179,31 @@ class LinkedList{
 
 
 
+    hasCycle(){ // checking whether the list has cycle
+        
+        if(this.isEmpty()){
+            return 
+        }else{
+            let slow=this.head
+            let fast=this.head.next
+
+            while(fast && fast.next){
+
+                if(slow===fast){
+                   
+                    return true
+                }
+
+                slow=slow.next
+                fast=fast.next.next
+            }
+        }
+
+        return false
+    }
+
+
+
     print(){  // printing the list
 
         if(this.isEmpty()){
@@ -226,6 +251,8 @@ list.removeIndex(2)
 list.search(10)
 list.print()
 list.reverse()
+list.print()
+console.log(list.hasCycle())
 list.print()
 
 
