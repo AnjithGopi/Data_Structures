@@ -1,27 +1,25 @@
 
 
 
+function binarySearch(arr,tar){
 
-function  binarySearch(arr,target,left=0,right=arr.length-1){
+
+    let left=0
+    let right=arr.length-1
+
+    while(left<=right){
+
+        let mid= Math.floor((left+right)/2)
 
 
-    if(left>right){
-        return
+        if(tar===arr[mid]){
+            return mid
+        }else if(tar<arr[mid]){
+            right=mid-1
+        }else{
+            left=mid+1
+        }
     }
-
-
-    let mid=Math.floor((left+right)/2)
-
-
-    if(tar===arr[mid]){
-        return mid
-    }else if(tar>arr[mid]){
-
-        return binarySearch(arr,tar,mid+1,right)
-    }else{
-        return binarySearch(arr,mid,left,mid-1)
-    }
-
 
 
     return -1
@@ -36,27 +34,9 @@ function  binarySearch(arr,target,left=0,right=arr.length-1){
 
 
 
-Insert (value){
-    let node=new Node(value)
 
+const arr= new Array(1,2,3,4,5)
 
-    if(this.head==null){
-        this.head=node
-    }
+const tar= 4 
 
-    else{
-        let temp=this.head
-        while(temp){
-            temp=temp.next
-        }
-        
-         temp.next=node
-         node.next=this.head
-    }
-
-    this.size++
-
-}
-
-
-
+console.log(binarySearch(arr,tar))
