@@ -1,7 +1,9 @@
 
 
 
+
 function bubbleSort(arr){
+
 
 
     let swapped
@@ -9,7 +11,6 @@ function bubbleSort(arr){
     do {
 
         swapped=false
-
         for(let i=0;i<arr.length-1;i++){
             if(arr[i]>arr[i+1]){
                 let temp=arr[i]
@@ -22,18 +23,15 @@ function bubbleSort(arr){
     } while (swapped);
 
 
-   
+    return arr
 
-   return arr
- 
+
+
 }
 
 
 
 
+const arr= new Array(-5,-1,-8,0,2,-7,5,6,4,9)
 
-
-const array= new Array(-6,7,-4,5,2,0,1,6,2)
-
-
-console.log(bubbleSort(array))
+console.log(bubbleSort(arr))
