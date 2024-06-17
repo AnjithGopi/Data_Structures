@@ -36,7 +36,7 @@ function bubbleSort(arr){
 
 const arr= new Array(-5,-1,-8,0,2,-7,5,6,4,9)
 
-console.log(bubbleSort(arr))
+console.log(bubbleSort(arr)) 
 
 
 
