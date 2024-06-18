@@ -4,29 +4,35 @@
 // Sorting the array in the increasing order , using bubble sort
 
 
-function bubbleSort(arr){
 
+function sort(arr){
 
 
     let swapped
 
+
     do {
 
-        swapped=false
-        for(let i=0;i<arr.length-1;i++){
-            if(arr[i]>arr[i+1]){
-                let temp=arr[i]
-                arr[i]=arr[i+1]
-                arr[i+1]=temp
-                swapped=true
-            }
+        swapped =false
+
+
+        
+    for(let i=0;i<arr.length-1;i++){
+        if(arr[i]>arr[i+1]){
+            let temp=arr[i]
+            arr[i]=arr[i+1]
+            arr[i+1]=temp
+
+            swapped=true
         }
+    }
+
         
     } while (swapped);
 
 
-    return arr
 
+    return arr
 
 
 }
@@ -34,22 +40,15 @@ function bubbleSort(arr){
 
 
 
-const arr= new Array(-5,-1,-8,0,2,-7,5,6,4,9)
-
-console.log(bubbleSort(arr)) 
 
 
 
 
-//   Sorting the array in the decreasing order using bubble sort
+// bubble sort in descending order 
 
 
 
-
-
-
-
-function bubbleSortDecreasing(arr){
+function descending(arr){
 
     let swapped
 
@@ -57,24 +56,31 @@ function bubbleSortDecreasing(arr){
 
 
         swapped=false
+
+
         for(let i=0;i<arr.length-1;i++){
             if(arr[i]<arr[i+1]){
                 let temp=arr[i]
                 arr[i]=arr[i+1]
                 arr[i+1]=temp
+
                 swapped=true
             }
         }
         
     } while (swapped);
 
-
-
     return arr
 
 }
 
 
-console.log(bubbleSortDecreasing(arr))
+
+const newArray= new Array(10,20,5,7,9,2,0,-1,-5)
+
+
+console.log(sort(newArray))
+
+console.log(descending(newArray))
 
 
