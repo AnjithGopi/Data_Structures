@@ -52,7 +52,7 @@ function insertionSortDescending(arr){
 
     }
 
-    return arr
+    return arr  
 
 }
 
