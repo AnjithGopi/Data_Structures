@@ -39,11 +39,6 @@ function sort(arr){
 
 
 
-
-
-
-
-
 // bubble sort in descending order 
 
 
