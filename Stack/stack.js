@@ -12,3 +12,9 @@
 //Pop:= Removing an element from the stack
 
 
+
+// Applications of Stack 
+
+
+
+
