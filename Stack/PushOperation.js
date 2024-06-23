@@ -1,5 +1,6 @@
 
 
+
 class Stack{
 
 
@@ -8,35 +9,64 @@ class Stack{
     }
 
 
+
     push(element){
+
         this.item.push(element)
     }
 
 
-    pop(){
-        if(this.item.length===0){
-              console.log("Stack is empty")
+
+    isEmpty(){
+
+        this.item.size===0
+    }
+
+
+
+    peek(){
+
+        if(this.isEmpty()){
+
+            console.log("Stack is empty")
             return
         }
 
-
-        this.item.pop()
-
-
+        return this.item[this.item.length-1]
     }
+
+
+
+    pop(){
+
+        if(this.isEmpty()){
+            console.log("Empty stack")
+            return 
+        }
+
+        return this.item.pop()
+    }
+
+
 
 
     display(){
 
-        console.log(this.item)
+
+        let values=""
+        for(let i=0;i<this.item.length;i++){
+
+            values+=this.item[i]+" "
+        }
+
+
+        console.log(values)
     }
 }
 
 
 
-
-const stack= new Stack()
-
+const stack = new Stack()
 
 stack.push(10)
 stack.push(20)
@@ -47,3 +77,4 @@ stack.push(50)
 stack.display()
 stack.pop()
 stack.display()
+console.log(stack.peek())
