@@ -154,4 +154,115 @@ console.log(binarySearch(arr,tar))
 
 
 
+// implementation of stack using linked list
+
+
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+    }
+}
+
+
+
+class Stack{
+
+
+    constructor(){
+        this.head=null
+        this.size=0
+    }
+
+
+
+    isEmpty(){
+        return this.size===0
+    }
+
+
+
+    push(value){
+
+        let node=new Node(value)
+
+        if(this.isEmpty()){
+            this.head=node
+        }else{
+
+
+            node.next=this.head
+            this.head=node
+        }
+        this.size++
+    }
+
+
+
+    peek(){
+
+        console.log(this.head.value)
+    }
+
+
+
+    pop(){
+        if(this.isEmpty()){
+            console.log("The stack is empty")
+        }else{
+
+
+            let value=this.head.value
+
+            this.head=this.head.next
+            this.size--
+
+            console.log(value)
+        }
+
+        
+    }
+
+
+
+
+    display(){
+
+
+        if(this.isEmpty()){
+            console.log("the stack is empty")
+        }else{
+
+
+            let temp=this.head
+
+            let str=""
+            while(temp){
+
+                str+=temp.value+ " "
+
+                temp=temp.next
+            }
+
+            console.log(str)
+        }
+    }
+}
+
+
+
+const stack=new Stack()
+
+for(let i=0;i<=10;i++){
+    stack.push(i)
+}
+
+
+stack.display()
+stack.pop()
+stack.display()
+stack.peek()
+
+
 
