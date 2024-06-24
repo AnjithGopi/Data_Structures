@@ -93,7 +93,37 @@ function ascending(arr){
 
 
 
+// insertion sort 
 
+
+
+function insertion(arr){
+
+
+    for(let i=1;i<arr.length;i++){
+
+        let key= arr[i]
+
+        let j=i-1
+
+        while(arr[j]>key){
+
+            arr[j+1]=arr[j]
+
+            j--
+        }
+
+        arr[j+1]=key
+    }
+
+
+    return arr
+
+
+
+
+   
+}
 
 
 
@@ -117,3 +147,4 @@ const array= new Array(10,4,5,2,3,7,6,8)
 console.log(insertionSort(array))
 console.log(insertionSortDescending(array))
 console.log(ascending(array))
+console.log(insertion(array))
