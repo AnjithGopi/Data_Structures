@@ -318,3 +318,105 @@ function mergeSort(arr){
 const unsorted= new Array(10,12,11,9,13,7,20)
 
 console.log(mergeSort(unsorted))
+
+
+// hashtable implementation 
+
+
+
+
+
+
+
+class Hashtable{
+
+    constructor(size=50){
+
+        this.size=size
+        this.buckets= new Array(size).fill(null).map(()=>[])
+    }
+
+
+
+    hash(key){
+
+        let hash=0
+        for(let char of key){
+
+            hash+=char.charCodeAt(0)
+        }
+
+        return hash%this.size
+    }
+
+
+
+    set(key,value){
+
+        let index= this.hash(key)
+
+        let bucket= this.buckets[index]
+
+        const existing= bucket.find(item=>item.key===key)
+
+        if(existing){
+
+            existing.value=value
+        }else{
+
+            bucket.push({key,value})
+        }
+    }
+
+
+
+    get(key){
+
+        let index= this.hash(key)
+        let bucket= this.buckets[index]
+
+
+        const found= bucket.find(item=>item.key===key)
+
+        if(found){
+
+            return found.value
+
+            
+            
+        }else{
+          
+            return undefined
+        }
+    }
+
+
+
+    remove(key){
+
+
+        let index= this.hash(key)
+
+        let bucket= this.buckets[index]
+
+        const indextoremove= bucket.findIndex(item=>item.key===key)
+
+        if(indextoremove){
+
+            bucket.splice(indextoremove,1)
+
+        }
+
+        
+    }
+}
+
+
+
+const hashtable= new Hashtable()
+
+hashtable.set("name","gopesh")
+hashtable.set("age",26)
+hashtable.set("place","kochi")
+
+hashtable.get("name")
