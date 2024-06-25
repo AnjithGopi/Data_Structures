@@ -1,10 +1,5 @@
 
-
-
 // selection sort
-
-
-
 
 function selectionSort(arr) {
 
