@@ -19,6 +19,12 @@ class LinkedList{
     constructor(){
         this.head=null
         this.tail=null
+        this.size=0
+    }
+
+
+    isEmpty(){
+        return this.size===0
     }
 
 
@@ -31,6 +37,7 @@ class LinkedList{
             this.tail.next=node
         }
         this.tail=node
+        this.size++
     }
 
 
@@ -43,6 +50,32 @@ class LinkedList{
         }
 
         this.head=node
+        this.size++
+    }
+
+
+    reverse(){
+
+        if (this.isEmpty()){
+            
+
+            return
+
+        }else{
+
+
+            let prev=null
+            let temp=this.head
+
+            while(temp){
+                let next=temp.next
+                temp.next=prev
+                prev=temp
+                temp=next
+            }
+
+            prev=this.head
+        }
     }
 
 
@@ -68,6 +101,9 @@ list.append(13)
 list.append(14)
 list.append(15)
 
-list.prepend(10)
 
+
+list.print()
+
+list.reverse()
 list.print()
