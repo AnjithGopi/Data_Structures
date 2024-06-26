@@ -31,8 +31,6 @@ class LinkedList{
         return this.size
     }
 
-
-
     append(value){ // appending the values
 
         const node =new Node(value)
@@ -59,13 +57,10 @@ class LinkedList{
         if(this.isEmpty()){
             this.head=node
         }else{
-
             node.next=this.head
             this.head=node
         }
-
         this.size++
-
     }
 
 
@@ -254,5 +249,10 @@ list.reverse()
 list.print()
 console.log(list.hasCycle())
 list.print()
+list.append(1000)
+list.print()
+list.prepend(5)
+list.print()
+
 
 
