@@ -253,6 +253,9 @@ list.append(1000)
 list.print()
 list.prepend(5)
 list.print()
+list.prepend(1200)
+list.print()
+
 
 
 
