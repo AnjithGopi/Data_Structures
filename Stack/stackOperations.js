@@ -6,6 +6,7 @@
 class Stack{
     constructor(){
         this.items=[]
+        this.undo=[]
     }
 
 
@@ -18,7 +19,10 @@ class Stack{
 
 
     pop(){   // Removing the last added element into the stack
-        return this.items.pop()
+
+        let poppedElement= this.items.pop()
+        this.undo.push(poppedElement)
+        return this.items
     }
 
 
@@ -53,11 +57,44 @@ class Stack{
 
         console.log(str)
 
-
-
-
-
     }
+
+    undoo(){ // undoing the last pop
+
+        let popped=this.undo.pop()
+        this.items.push(popped)
+      
+        let str=""
+
+        for(let i=0;i<this.items.length;i++){
+
+        str+=this.items[i]+" "
+
+
+       }
+
+       console.log(str)
+    }
+
+    redo(){  // again redoing the pop
+
+        let popped= this.items.pop()
+        this.undo.push(popped)
+        let str=""
+
+       for(let i=0;i<this.items.length;i++){
+
+        str+=this.items[i]+" "
+
+
+       }
+
+       console.log(str)
+  
+    }
+
+
+
 
 
     reverse(){ // reversing the stack
@@ -96,9 +133,13 @@ for(let i=0;i<=10;i++){
 
 stack.printStack()
 stack.removeMiddle()
-stack.pop()
+
 stack.printStack()
 stack.peek()
 stack.middle()
 stack.reverse()
+stack.pop()
+stack.printStack()
+stack.undoo()
+stack.redo()
 
