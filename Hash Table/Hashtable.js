@@ -3,9 +3,6 @@
 
 // implementing hashtable with collision handling
 
-
-
-
 class Hashtable{
 
 
@@ -58,7 +55,7 @@ class Hashtable{
         const found= bucket.find(item=>item.key===key)
 
         if(found){
-            return found
+            return found.value
         }else{
             return undefined
         }

@@ -36,6 +36,50 @@ class Stack{
     }
 
 
+    middle(){
+
+        let midIndex=Math.floor(this.size)/2
+        let temp=this.head
+        let prev=null
+
+        for(let i=0;i<midIndex;i++){
+
+            prev=temp
+
+            temp=temp.next
+
+        }
+
+        console.log("midlle:",prev.value)
+    }
+
+
+    removeMiddle(){
+
+        let midIndex= Math.floor((this.size)/2)
+
+        let temp=this.head
+        let prev=null
+
+        for(let i=0;i<midIndex;i++){
+            prev=temp
+            temp=temp.next
+        }
+
+        if(prev){
+            prev.next=temp.next
+
+        }
+
+        
+        this.size--
+
+
+    
+        
+    }
+
+
     pop(){
 
         if(this.isEmpty()){
@@ -93,13 +137,23 @@ class Stack{
 
 const stack= new Stack()
 
-stack.push(10)
-stack.push(20)
-stack.push(30)
+
+for(let i=0;i<=10;i++){
+    stack.push(i)
+
+}
+
+
+
+
+stack.display()
+stack.middle()
+stack.removeMiddle()
 stack.display()
 stack.peek()
 stack.pop()
 stack.display()
+
 
 
 

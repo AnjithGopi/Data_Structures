@@ -49,13 +49,19 @@ class Stack{
         let left=0
         let right= this.items.length-1
         let mid= Math.floor((left+right)/2)
-        this.items.splice(mid,1)
-        let str=""
-        for(let i=0;i<this.items.length;i++){
-            str+=this.items[i]+" "
+        let temp=[]
+
+        for(let i=0;i<mid;i++){
+            temp.push(this.items.pop())
         }
 
-        console.log(str)
+        this.items.pop()
+
+        while(temp.length>0){
+            this.items.push(temp.pop())
+        }
+
+        console.log(this.items)
 
     }
 
