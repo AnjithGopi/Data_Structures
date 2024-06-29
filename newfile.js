@@ -1,13 +1,47 @@
 
 
 
-class Node{
 
-    constructor(value){
+function mergeSort(arr){
 
-        this.value=value
-        this.next=null
+
+    let mid= Math.floor(arr.length/2)
+
+    let leftArray= arr.slice(0,mid)
+    let rigthArray=arr.slice(mid)
+
+
+    let sortedLeft= mergeSort(leftArray)
+    let sortedRight= mergeSort(rigthArray)
+
+    return merge(sortedLeft,sortedRight)
+
+
+    function merge(left,right){
+
+
+        let result=[]
+
+        let leftIndex=0
+        let rightIndex=0
+
+
+        while(leftIndex < left.length && rightIndex < right.length){
+
+
+            if(left[leftIndex]<right[rightIndex]){
+                result.push(left[leftIndex])
+                leftIndex++
+            }else{
+                result.push(right[rightIndex])
+                rightIndex++
+            }
+        }
+
+
+        return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
     }
+
 
 
 
@@ -15,73 +49,6 @@ class Node{
 }
 
 
+const array=[10,12,11,7]
 
-class LinkedList{
-
-    constructor(){
-
-        this.head=null
-        this.size=0
-    }
-
-
-
-
-    append(value){
-
-
-        const node= new Node(value)
-
-        if(!this.head){
-            this.head=node
-        }else{
-
-            let temp=this.head
-            while(temp.next){
-                temp=temp.next
-            }
-
-            temp.next=node
-        }
-
-        this.size++
-    }
-
-
-
-    print(){
-
-        if(!this.head){
-            console.log("The list is empty")
-        }else{
-
-
-            let temp=this.head
-            let values= ""
-
-            while(temp){
-
-                values+=temp.value+" "
-                temp=temp.next
-            }
-
-            console.log(values)
-        }
-
-    }
-
-
-
-
-}
-
-
-
-const list= new LinkedList()
-
-list.append(10)
-list.append(20)
-list.append(30)
-
-
-list.print()
+console.log(mergeSort(array))

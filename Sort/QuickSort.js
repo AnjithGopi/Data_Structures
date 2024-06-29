@@ -113,9 +113,6 @@ function quick(arr){
 
 
 const array= new Array(10,12,11,3,0,-6,7,6)
-
-
 console.log(quick(array))
-
 console.log(quickSort(array))
 console.log(ascending(array))
