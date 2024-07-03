@@ -2,7 +2,7 @@
 
 class Hashtable{
 
-    constructor(size=50){
+    constructor(size){
         this.size=size
         this.buckets= new Array(size).fill(null).map(()=>[])
     }
@@ -54,7 +54,7 @@ class Hashtable{
 
 
 
-const hashtable= new Hashtable()
+const hashtable= new Hashtable(50)
 
 hashtable.set("name","Anjth")
 hashtable.set("age",26)
