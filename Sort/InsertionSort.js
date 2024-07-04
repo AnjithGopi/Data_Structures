@@ -195,28 +195,6 @@ function newFn(arr){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const array= new Array(10,4,5,2,3,7,6,8)
 console.log(insertionSort(array))
 console.log(insertionSortDescending(array))
