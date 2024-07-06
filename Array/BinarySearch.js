@@ -38,8 +38,29 @@ function binarySearch(arr,tar){
 
 
 
-const array= new Array(1,2,3,4,5)
+
+
+
+
+function duplicate(arr){
+
+
+    for(let i=0;i<arr.length;i++){
+        if(arr.indexOf(arr[i])!==arr.lastIndexOf(arr[i])){
+            arr.splice(i,1)
+
+            
+
+        }
+    }
+
+    return arr
+
+}
+
+
+const array= new Array(1,2,3,4,5,5)
 const target=4 // output=3
 
-
+console.log(duplicate(array))
 console.log(binarySearch(array,target))
