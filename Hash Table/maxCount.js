@@ -21,6 +21,7 @@ function maxElement(arr){
 
 
     let maxCount=0
+    
     let maxElem=null
 
 
