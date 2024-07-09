@@ -2,28 +2,18 @@
 
 
 
+const str= "i  am  anjith"
 
-function duplicate(array){
 
+const arr= str.split("")
 
-    for(item of array){
+for(let i=0 ;i<arr.length;i++){
 
-        if(array.indexOf(item)!==array.lastIndexOf(item)){
+    if(arr[i]==" " && arr[i+1]== " "){
 
-            return item
-
-        }
-        
+        arr.splice(i,1)
     }
-
-    return "no duplicates"
-
 }
 
 
-
-const arr= new Array(110,20,30,40,100,40)
-
-console.log(duplicate(arr))
-
- 
+console.log(arr.join(""))
