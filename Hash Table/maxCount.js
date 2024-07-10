@@ -1,44 +1,43 @@
 
 
-// finding an element with maximum count using hashtable
+
+// finding the maximum occured element using hashtable
 
 
 
-function maxElement(arr){
-
-    let count={}
+function maxElem(array){
 
 
-    for(elem of arr){
+    let hashTable={}
 
-        if(!count[elem]){
-            count[elem]=1
-        }else{
-            count[elem]++
-        }
+array.forEach(element => {
+
+    if(hashTable[element]){
+        hashTable[element]++
+    }else{
+        hashTable[element]=1
     }
-
-
-
-    let maxCount=0
     
-    let maxElem=null
+});
 
 
 
-    for(const elem in count){
 
+let maxCount=0
+let maxElement=0
+for(let elem in hashTable){
 
-        if(maxCount>count[elem])
+    if(hashTable[elem]>maxCount){
+        maxCount=hashTable[elem]
 
-            maxCount=count[elem]
-            maxElem=elem
-
-
+        maxElement=elem
     }
 
+    
+}
 
-    return maxElem
+
+return maxElement
 
 }
 
@@ -46,6 +45,7 @@ function maxElement(arr){
 
 
 
-const arr=[0,0,1,1,1,2,2,2,2,3,3,3,3,3]
+const arr=[1,10,20,2,30,2,40,2,50,3,60,3,12,4,12,4,5,5,7,5,5,5,6] //output=5
 
-console.log( maxElement(arr))
+
+console.log(maxElem(arr))
