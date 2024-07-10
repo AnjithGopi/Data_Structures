@@ -18,7 +18,10 @@ array.forEach(element => {
         hashTable[element]=1
     }
     
+    
 });
+
+console.log(hashTable)
 
 
 
