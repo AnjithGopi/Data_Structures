@@ -85,3 +85,8 @@ hashtable.set("age",26)
 hashtable.set("place","kochi")
 
 console.log(hashtable.get("name"))
+
+
+
+
+
