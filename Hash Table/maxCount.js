@@ -10,37 +10,34 @@ function maxElem(array){
 
     let hashTable={}
 
-array.forEach(element => {
 
-    if(hashTable[element]){
-        hashTable[element]++
-    }else{
-        hashTable[element]=1
-    }
-    
-    
-});
+    for(let elem of array){
 
-console.log(hashTable)
+        if(hashTable[elem]){
 
-
-
-
-let maxCount=0
-let maxElement=0
-for(let elem in hashTable){
-
-    if(hashTable[elem]>maxCount){
-        maxCount=hashTable[elem]
-
-        maxElement=elem
+            hashTable[elem]++
+        }else{
+            hashTable[elem]=1
+        }
     }
 
-    
-}
+
+       let maxCout=0
+       let maxElement=0
+
+       for(let elem in hashTable){
+
+        if(hashTable[elem]>maxCout){
+
+            maxCout=hashTable[elem]
+            maxElement=elem
+        }
+       }
 
 
-return maxElement
+       return maxElement
+
+
 
 }
 
