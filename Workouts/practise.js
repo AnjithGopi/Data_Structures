@@ -157,3 +157,56 @@ function remove(arr){
 
 let arr=[10,20,30,20,10,40]
 console.log(remove(arr))
+
+
+
+
+
+
+
+
+
+
+
+
+
+function removeMiddle(arr){
+
+
+    let mid= Math.floor(arr.length/2)
+
+    for(let i=0;i<mid;i++){
+
+
+        tempStack.push(arr.pop())
+    }
+
+
+    arr.pop()
+
+    while(tempStack.length>0){
+
+        arr.push(tempStack.pop())
+    }
+
+    return arr
+
+
+   
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+const stack=[10,20,30,40,50]
+let tempStack=[]
+console.log(removeMiddle(stack))
