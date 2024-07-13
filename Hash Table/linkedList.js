@@ -89,3 +89,5 @@ list.set("Messi",10)
 list.set("Ronaldo",11)
 list.set("Neymar",7)
 
+console.log(list.get("Messi"))
+
