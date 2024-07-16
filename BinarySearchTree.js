@@ -1,18 +1,20 @@
-// Basic implementation of binary search tree
+// implementation of binary search tree  and its operations
 
 
 
 class Node{
+
     constructor(value){
         this.value=value
         this.left=null
         this.right=null
     }
-
-    
 }
 
+
+
 class BinarySearchTree{
+
     constructor(){
         this.root=null
     }
@@ -29,7 +31,6 @@ class BinarySearchTree{
         let node= new Node(value)
 
         if(this.isEmpty()){
-
             this.root=node
         }else{
 
@@ -39,26 +40,25 @@ class BinarySearchTree{
             while(currentNode){
 
                 parentNode=currentNode
-
                 if(value<currentNode.value){
 
                     currentNode=currentNode.left
                 }else{
-
                     currentNode=currentNode.right
                 }
             }
 
 
             if(value<parentNode.value){
-
                 parentNode.left=node
             }else{
                 parentNode.right=node
             }
         }
-    }
 
+        console.log("value Added successfully")
+        return
+    }
 
 
 }
@@ -66,19 +66,12 @@ class BinarySearchTree{
 
 
 
-const bst=new BinarySearchTree()
-console.log(bst.isEmpty())
+
+const bst= new BinarySearchTree()
 
 bst.insert(10)
 bst.insert(15)
-bst.insert(16)
-bst.insert(25)
-bst.insert(24)
-bst.insert(45)
-console.log(JSON.stringify(bst, null, 2));
-
-
-
-
-
+bst.insert(13)
+bst.insert(14)
+bst.insert(20)
 
