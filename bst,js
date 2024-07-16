@@ -1,0 +1,87 @@
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.left=null
+        this.right=null
+    }
+}
+
+
+class BinarySearchTree{
+    constructor(){
+        this.root=null
+    }
+
+
+    isEmpty(){
+        return this.root===null
+    }
+
+
+    insert(value){
+
+        let node= new Node(value)
+
+        if(this.isEmpty()){
+
+           this.root=node
+        }else{
+
+            let currentNode=this.root
+            let parentNode=null
+
+            while(currentNode){
+
+                parentNode=currentNode
+                if(value<currentNode.value){
+
+                    currentNode=currentNode.left
+                }else{
+                    currentNode=currentNode.right
+                }
+            }
+
+
+            if(value<parentNode.value){
+
+                parentNode.left=node
+            }else{
+                parentNode.right=node
+            }
+
+
+        }
+
+
+        return "Values Added Successfully"
+
+
+    }
+}
+
+
+
+const bst= new BinarySearchTree()
+
+console.log(bst.insert(10))
+console.log(bst.insert(15))
+console.log(bst.insert(20))
+console.log(bst.insert(17))
+console.log(bst.insert(18))
+console.log(bst.insert(21))
+console.log(bst.insert(25))
+console.log(bst.insert(30))
+console.log(bst.insert(28))
+console.log(bst.insert(27))
+console.log(bst.insert(14))
+console.log(bst.insert(70))
+console.log(bst.insert(75))
+console.log(bst.insert(72))
+console.log(bst.insert(60))
+console.log(bst.insert(59))
+console.log(bst.insert(45))
+console.log(bst.insert(80))
+console.log(bst.insert(85))
+console.log(bst.insert(100))
+
