@@ -61,6 +61,34 @@ class BinarySearchTree{
     }
 
 
+
+    search(value){
+
+        let currentNode=this.root
+
+        while(currentNode){
+
+            if(currentNode.value===value){
+
+                console.log("value found")
+               
+                return currentNode
+            }else if(value<currentNode.value){
+
+                currentNode=currentNode.left
+               
+            
+            }else{
+                currentNode=currentNode.right
+                
+                
+            }
+        }
+
+        return "Value not found"
+    }
+
+
 }
 
 
@@ -75,3 +103,7 @@ bst.insert(13)
 bst.insert(14)
 bst.insert(20)
 
+
+console.log(bst.search(13))
+console.log(bst.search(14))
+console.log(bst.search(20))
