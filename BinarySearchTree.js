@@ -102,8 +102,12 @@ bst.insert(15)
 bst.insert(13)
 bst.insert(14)
 bst.insert(20)
+bst.insert(25)
+bst.insert(18)
+bst.insert(30)
+
 
 
 console.log(bst.search(13))
 console.log(bst.search(14))
-console.log(bst.search(20))
+console.log(bst.search(100))
