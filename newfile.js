@@ -1,54 +1,98 @@
+// BST
 
 
-
-
-function mergeSort(arr){
-
-
-    let mid= Math.floor(arr.length/2)
-
-    let leftArray= arr.slice(0,mid)
-    let rigthArray=arr.slice(mid)
-
-
-    let sortedLeft= mergeSort(leftArray)
-    let sortedRight= mergeSort(rigthArray)
-
-    return merge(sortedLeft,sortedRight)
-
-
-    function merge(left,right){
-
-
-        let result=[]
-
-        let leftIndex=0
-        let rightIndex=0
-
-
-        while(leftIndex < left.length && rightIndex < right.length){
-
-
-            if(left[leftIndex]<right[rightIndex]){
-                result.push(left[leftIndex])
-                leftIndex++
-            }else{
-                result.push(right[rightIndex])
-                rightIndex++
-            }
-        }
-
-
-        return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+class Node{
+    constructor(value){
+        this.value=value
+        this.left=null
+        this.right=null
     }
-
-
-
-
-
 }
 
 
-const array=[10,12,11,7]
+class Bst{
 
-console.log(mergeSort(array))
+    constructor(){
+        this.root=null
+    }
+
+    isEmpty(){
+
+        return this.root===null
+    }
+
+
+   insert(value){
+
+    let node= new Node(value)
+
+    if(this.isEmpty()){
+        this.root=node
+    }else{
+
+        let currentNode=this.root
+        let parentNode=null
+        while(currentNode){
+
+            parentNode=currentNode
+            if(value<currentNode.value){
+                currentNode=currentNode.left
+            }else{
+                currentNode=currentNode.right
+            }
+        }
+
+        if(value<parentNode.value){
+
+            parentNode.left=node
+        }else{
+            parentNode.right=node
+        }
+    }
+   }
+
+
+
+   search(value){
+
+    if(this.isEmpty()){
+        return "The tree is empty"
+    }else{
+
+      let currentNode=this.root
+
+      while(currentNode){
+
+        if(value===currentNode.value){
+            return currentNode
+        }else if(value<currentNode.value){
+
+            currentNode=currentNode.left
+        }else{
+            currentNode=currentNode.right
+        }
+      }
+
+
+      return "value not found"
+
+
+    }
+
+   }
+}
+
+
+
+
+ const bst= new Bst()
+
+ bst.insert(10)
+ bst.insert(8)
+ bst.insert(13)
+ bst.insert(9)
+
+
+ console.log(bst.search(9))
+ console.log(bst.search(100))
+
