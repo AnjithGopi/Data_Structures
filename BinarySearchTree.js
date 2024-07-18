@@ -130,6 +130,29 @@ class BinarySearchTree{
 
     }
 
+
+    min(root){
+        if(!root.left){
+            return root
+        }else{
+            return this.min(root.left)
+        }
+    }
+
+
+    max(root){
+
+        if(!root.right){
+            return root
+        }else{
+
+            return this.max(root.right)
+        }
+    }
+
+
+
+
    
 
 
@@ -159,3 +182,6 @@ console.log(bst.search(100))
 console.log(bst.inOrder(bst.root))
 console.log(bst.preOrder(bst.root))
 console.log(bst.postOrder(bst.root))
+
+console.log(bst.min(bst.root))
+console.log(bst.max(bst.root))
