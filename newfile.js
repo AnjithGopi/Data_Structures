@@ -80,6 +80,25 @@ class Bst{
     }
 
    }
+
+
+   inOrder(root ,nodes=[]){
+
+   
+
+    if(root){
+
+        this.inOrder(root.left)
+        nodes.push(root.value)
+        this.inOrder(root.right)
+    }
+
+
+    return nodes
+   }
+
+
+
 }
 
 
@@ -95,4 +114,5 @@ class Bst{
 
  console.log(bst.search(9))
  console.log(bst.search(100))
+ console.log(bst.inOrder(bst.root))
 
