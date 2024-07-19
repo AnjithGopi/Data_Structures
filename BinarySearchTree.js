@@ -95,7 +95,6 @@ class BinarySearchTree{
         if(root){
             this.inOrder(root.left,nodes)
             nodes.push(root.value)
-            console.log(root.value)
             this.inOrder(root.right,nodes)
         }
 
@@ -151,6 +150,43 @@ class BinarySearchTree{
     }
 
 
+    delete(value){
+
+        this.root= this.deleteNode(this.root,value)
+    }
+
+
+    deleteNode(root,value){
+
+        if(this.root===null){
+            return null
+        }else if(value<root.value){
+
+            root.left=this.deleteNode(root.left,value)
+        }else if(value>root.value){
+
+            root.right=this.deleteNode(root.right,value)
+        }else{
+
+            if(!root.left&&!root.right){
+                return null
+            }else if(!root.left){
+                return root.right
+            }else if(!root.right){
+                return root.left
+            }else{
+
+                root.value=this.min(root.right)
+                root.right=this.deleteNode(root.right,root.value)
+            }
+
+
+        }
+
+        return root
+    }
+
+
 
 
    
@@ -185,3 +221,6 @@ console.log(bst.postOrder(bst.root))
 
 console.log(bst.min(bst.root))
 console.log(bst.max(bst.root))
+bst.delete(15)
+
+console.log(bst.search(15))
