@@ -1,6 +1,6 @@
 
 
-// write a function to print n numbers using recursion
+// write a function to print n even numbers using recursion
 
 
 
@@ -8,7 +8,7 @@
 
 function print(num){
 
-    if(num%2!==0){
+    if(num%2==0){
         
      console.log(num)
 
