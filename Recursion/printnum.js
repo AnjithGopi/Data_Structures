@@ -8,13 +8,18 @@
 
 function print(num){
 
+    if(num%2!==0){
+        
+     console.log(num)
+
+    }
+   
 
     if(num==10){
 
         return num
     }
 
-    console.log(num)
 
     return print(num+1)
 
@@ -26,4 +31,4 @@ function print(num){
 
 
 
-console.log(print(1))
+print(1)
