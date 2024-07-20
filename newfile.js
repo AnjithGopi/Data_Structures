@@ -82,19 +82,39 @@ class Bst{
    }
 
 
-   inOrder(root ,nodes=[]){
+   inOrder(root){
 
    
 
     if(root){
 
         this.inOrder(root.left)
-        nodes.push(root.value)
+        console.log(root.value)
         this.inOrder(root.right)
     }
 
 
-    return nodes
+   }
+
+
+   postOrder(root){
+    if(root){
+        this.postOrder(root.left)
+        this.postOrder(root.right)
+        console.log(root.value)
+    }
+
+   }
+
+
+   preOrder(root){
+    if(root){
+
+       console.log(root.value)
+        this.preOrder(root.left)
+        this.preOrder(root.right)
+    }
+
    }
 
 
@@ -151,6 +171,8 @@ class Bst{
 
 
  console.log(bst.search(9))
- console.log(bst.search(100))
- console.log(bst.inOrder(bst.root))
+
+ bst.inOrder(bst.root)
+ bst.postOrder(bst.root)
+ bst.preOrder(bst.root)
 
