@@ -133,7 +133,8 @@ class BinarySearchTree{
     min(root){
         if(!root.left){
             return root
-        }else{
+        }else{ 
+            console.log(" minn")
             return this.min(root.left)
         }
     }
@@ -178,7 +179,7 @@ class BinarySearchTree{
 
                 root.value=this.min(root.right)
                 root.right=this.deleteNode(root.right,root.value)
-                
+
             }
 
 
