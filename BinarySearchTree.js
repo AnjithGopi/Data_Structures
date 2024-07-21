@@ -178,6 +178,7 @@ class BinarySearchTree{
 
                 root.value=this.min(root.right)
                 root.right=this.deleteNode(root.right,root.value)
+                
             }
 
 
