@@ -156,6 +156,38 @@ class Bst{
    }
 
 
+   isValid(root){
+    if(!root){
+        return true
+    }else{
+
+        let stack=[]
+        let currentNode=root
+        let prev=-Infinity
+
+        while(stack.length>0||currentNode){
+
+            while(currentNode){
+
+                stack.push(currentNode)
+                currentNode=currentNode.left
+            }
+
+            currentNode=stack.pop()
+
+            if(currentNode.value<=prev){
+                return false
+            }
+
+            prev=currentNode.value
+            currentNode=currentNode.right
+        }
+
+        return true
+    }
+   }
+
+
 
 }
 
@@ -175,4 +207,4 @@ class Bst{
  bst.inOrder(bst.root)
  bst.postOrder(bst.root)
  bst.preOrder(bst.root)
-
+ console.log(bst.isValid(bst.root))
