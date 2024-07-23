@@ -1,107 +1,68 @@
 
 
 
-
-class Node{
-
-    constructor(value){
-
-        this.value=value
-        this.next=null
-    }
-
-
-}
-
-
-
-class Queue{
+class Graph{
 
     constructor(){
 
-        this.head=null
-        this.tail=null
-        this.size=0
-    }
-
-
-    isEmpty(){
-        return this.size==0
+        this.adjacensyList={}
     }
 
 
 
-    enque(value){
+    addVertices(vertex){
+
+        if(!this.adjacensyList[vertex]){
+
+            this.adjacensyList[vertex]=new Set()
+        }
+    }
 
 
-        const node= new Node(value)
+    addEdge(vertex1,vertex2){
 
-        if(this.isEmpty()){
-
-            this.head=node
-            this.tail=node
-        }else{
-
-            this.tail.next=node
-            this.tail=node
+        if(!this.adjacensyList[vertex1]){
+            this.addVertices(vertex1)
+        }
+        if(!this.adjacensyList[vertex2]){
+            this.addVertices(vertex2)
         }
 
-        this.size++ 
 
-
+        this.adjacensyList[vertex1].add(vertex2)
     }
 
 
 
-    deque(){
+    bfs(start){
 
-        if(this.isEmpty()){
-
-            return "list is empty"
-        }else{
+        let queue=[start]
+        let visited = new Set([start])
 
 
-            this.head=this.head.next
+        while(queue.length>0){
+
+            let vertex= queue.shift()
+            console.log(vertex)
+
+
+            for(let neighbor of this.adjacensyList){
+                if(!this.adjacensyList[vertex].has(neighbor)){
+
+                    visited.add(neighbor)
+                    queue.push(neighbor)
+                }
+            }
         }
-
-        this.size--
     }
-
-
-
-    print(){
-
-        let temp=this.head
-
-        let val=""
-
-        while(temp){
-
-            val+=temp.value+ " "
-            temp=temp.next
-        }
-       
-
-
-        console.log(val)
-
-
-
-    }
-
-
-        
 }
 
 
 
-const queue= new Queue()
 
 
-queue.enque(10)
-queue.enque(20)
-queue.enque(10)
-queue.enque(20)
-queue.enque(10)
-queue.enque(20)
-queue.print()
+
+const graph= new Graph()
+graph.addVertices('A')
+graph.addVertices('B')
+graph.addVertices('C')
