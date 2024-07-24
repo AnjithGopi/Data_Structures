@@ -36,20 +36,6 @@ function push(heap,key){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let heap= [3,13,19,33,42,23,21]
+let minHeap= [3,13,19,33,42,23,21]
 let value=7
-console.log(push(heap,value))
+console.log(push(minHeap,value))
