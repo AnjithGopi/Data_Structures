@@ -1,4 +1,11 @@
 
+
+
+// given below is a min heap add a new value into the heap
+
+
+
+
 function push(heap,key){
 
     heap.push(key)
@@ -14,7 +21,7 @@ function push(heap,key){
             [heap[parent],heap[currentIndex]]=[heap[currentIndex],heap[parent]]
 
             currentIndex=parent
-            
+
         }else{
 
             break
