@@ -43,9 +43,9 @@ const heap= new Minheap()
 
 
 console.log(heap.push(3))
-console.log(heap.push(13))
+
 console.log(heap.push(19))
-console.log(heap.push(33))
+console.log(heap.push(13))
 console.log(heap.push(42))
 console.log(heap.push(23))
 console.log(heap.push(21))
