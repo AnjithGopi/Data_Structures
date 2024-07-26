@@ -33,6 +33,49 @@ class Minheap{
         return this.heap
     }
 
+
+    pop(){
+
+
+        if (this.heap.length === 0) {
+            return null;
+        }
+        
+
+        [this.heap[0],this.heap[this.heap.length-1]]=[this.heap[this.heap.length-1],this.heap[0]]
+
+        let removed=this.heap.pop()
+
+        let currentIndex=0
+
+        while(2*currentIndex+1<this.heap.length){
+
+            let left=2*currentIndex+1
+            let right=2*currentIndex+2
+            let minIndex;
+            if (right < this.heap.length && this.heap[right] < this.heap[left]) {
+                minIndex = right;
+            } else {
+                minIndex = left;
+            }
+
+          
+
+            if(this.heap[currentIndex]>this.heap[minIndex]){
+
+                [this.heap[currentIndex],this.heap[minIndex]]=[this.heap[minIndex],this.heap[currentIndex]]
+            }else{
+                break
+            }
+        }
+
+
+
+        return this.heap
+
+
+    }
+
    
 }
 
@@ -50,3 +93,4 @@ console.log(heap.push(42))
 console.log(heap.push(23))
 console.log(heap.push(21))
 console.log(heap.push(7))
+console.log(heap.pop())
