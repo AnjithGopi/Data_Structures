@@ -53,7 +53,7 @@ class Minheap{
             let left=2*currentIndex+1
             let right=2*currentIndex+2
             let minIndex;
-            if (right < this.heap.length && this.heap[right] < this.heap[left]) {
+            if (this.heap[right] < this.heap[left]) {
                 minIndex = right;
             } else {
                 minIndex = left;
@@ -64,6 +64,7 @@ class Minheap{
             if(this.heap[currentIndex]>this.heap[minIndex]){
 
                 [this.heap[currentIndex],this.heap[minIndex]]=[this.heap[minIndex],this.heap[currentIndex]]
+                currentIndex=minIndex
             }else{
                 break
             }
