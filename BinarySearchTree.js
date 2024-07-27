@@ -134,7 +134,7 @@ class BinarySearchTree{
         if(!root.left){
             return root
         }else{ 
-            console.log(" minn")
+          
             return this.min(root.left)
         }
     }
