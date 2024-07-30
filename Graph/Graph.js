@@ -23,6 +23,8 @@ class Graph{
             this.addVertex(vertex2)
         }
 
+        
+
         this.adjacencyList[vertex1].add(vertex2)
         //this.adjacencyList[vertex2].add(vertex1)
 
@@ -37,47 +39,32 @@ class Graph{
     }
 
     bfs(start){
-        let queue=[start]
-        let visited= new Set([start])
 
-        while(queue.length){
+        let queue=[start]
+
+        let visited=new Set([start])
+
+        while(queue.length>0){
 
             let vertex=queue.shift()
             console.log(vertex)
 
-            for(let neighbour of this.adjacencyList[vertex]){
+            for(let neighbor of this.adjacencyList[vertex]){
 
-                if(!visited.has(neighbour)){
-                    visited.add(neighbour)
-                    queue.push(neighbour)
+                if(!visited.has(neighbor)){
+
+                    visited.add(neighbor)
+
+                    queue.push(neighbor)
                 }
             }
         }
-
-        console.log(visited)
     }
 
 
+  
 
-    dfs(start) {
-        const stack = [start]
-        const visited = new Set()
-    
-        while (stack.length) {
-            const vertex = stack.pop()
-            if (!visited.has(vertex)) {
-                console.log(vertex)
-                visited.add(vertex)
-    
-                for (const neighbor of this.adjacencyList[vertex] || []) {
-                    if (!visited.has(neighbor)) {
-                        stack.push(neighbor);
-                    }
-                }
-            }
-        }
-        console.log("visited in dfs:",visited)
-    }
+
 
     
 }
@@ -92,9 +79,9 @@ graph.addVertex('B')
 graph.addVertex('C')
 
 
-graph.addEdge("A","B")
-graph.addEdge("B","C")
+graph.addEdge("A","C")
+graph.addEdge("C","B")
 
 graph.display()
 graph.bfs("A")
-graph.dfs("A")
+//graph.dfs("A")

@@ -120,8 +120,8 @@ class BinarySearchTree{
 
         if(root){
 
-            this.preOrder(root.left,nodes)
-            this.preOrder(root.right,nodes)
+            this.postOrder(root.left,nodes)
+            this.postOrder(root.right,nodes)
             nodes.push(root.value)
         }
 
