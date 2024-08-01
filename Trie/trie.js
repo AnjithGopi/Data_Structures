@@ -35,7 +35,7 @@ class Trie{
             current=current.child[char]
         }
 
-        this.isEndOfWord=true
+        current.isEndOfWord=true
     }
 
 
@@ -53,7 +53,7 @@ class Trie{
             current=current.child[char]
         }
 
-        return "word is found"
+        return current.isEndOfWord ? "word is found" : false
     }
 }
 

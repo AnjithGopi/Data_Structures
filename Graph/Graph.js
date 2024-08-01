@@ -61,6 +61,23 @@ class Graph{
         }
     }
 
+    dfs(start) {
+        let stack = [start]
+        let visited = new Set([start])
+
+        while (stack.length > 0) {
+            let vertex = stack.pop()
+            console.log(vertex)
+
+            for (let neighbor of this.adjacencyList[vertex]) {
+                if (!visited.has(neighbor)) {
+                    visited.add(neighbor)
+                    stack.push(neighbor)
+                }
+            }
+        }
+    }
+
 
   
 
@@ -84,4 +101,4 @@ graph.addEdge("C","B")
 
 graph.display()
 graph.bfs("A")
-//graph.dfs("A")
+graph.dfs("A")
