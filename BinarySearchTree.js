@@ -62,6 +62,45 @@ class BinarySearchTree{
 
 
 
+    isValid(root){
+
+         if(!root){
+             return true
+         }else{
+
+            let stack=[]
+            let currentNode= this.root
+            let prev = -Infinity
+
+            while (currentNode || stack.length>0 ){
+
+
+                while(currentNode){
+
+                    stack.push(currentNode)
+                    currentNode=currentNode.left
+                }
+
+
+                currentNode=stack.pop()
+
+                if(currentNode.value<=prev){
+
+                    return false
+                }
+
+                prev=currentNode.value
+                currentNode=currentNode.right
+
+
+            }
+
+            return true
+        }
+    }
+
+
+
     search(value){
 
         let currentNode=this.root
@@ -210,6 +249,8 @@ bst.insert(20)
 bst.insert(25)
 bst.insert(18)
 bst.insert(30)
+
+console.log(bst.isValid())
 
 
 
