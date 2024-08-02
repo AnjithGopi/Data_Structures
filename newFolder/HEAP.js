@@ -47,7 +47,6 @@ class Minheap{
 
         let removed = this.heap.pop()
 
-
         let currentIndex=0
 
         while(2*currentIndex+1<this.heap.length){

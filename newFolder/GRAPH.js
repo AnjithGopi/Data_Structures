@@ -90,6 +90,29 @@ class Graph{
             }
         }
     }
+
+
+    removeEdge(vertex1,vertex2){
+
+        if(this.adjacencyList[vertex1]){
+
+            this.adjacencyList[vertex1].delete(vertex2)
+        }
+    }
+
+
+    deleteVertex(vertex){
+
+        if(!this.adjacencyList[vertex]){
+            return
+        }
+
+        for(let adjacentVertex of this.adjacencyList[vertex]){
+            this.adjacencyList[adjacentVertex].delete(vertex)
+        }
+
+        delete this.adjacencyList[vertex]
+    }
 }
 
 
@@ -108,3 +131,6 @@ graph.addEdge("B","C")
 graph.display()
 graph.bfs("A")
 graph.dfs("A")
+
+graph.deleteVertex("B")
+graph.display()
