@@ -10,7 +10,7 @@ class Graph{
 
 
 
-    addVertex(vertex){
+    addVertex(vertex){            // adding the vertices of the graph
 
         if(!this.adjacencyList[vertex]){
             this.adjacencyList[vertex]= new Set()
@@ -18,7 +18,7 @@ class Graph{
     }
 
 
-    addEdge(vertex1,vertex2){
+    addEdge(vertex1,vertex2){  // creating edges
 
 
         if(!this.adjacencyList[vertex1]){
@@ -34,7 +34,7 @@ class Graph{
         this.adjacencyList[vertex1].add(vertex2)
     }
 
-    display(){
+    display(){            // display the  graph
 
         for(let vertex in this.adjacencyList){
 
@@ -46,7 +46,7 @@ class Graph{
     }
 
 
-    bfs(start){
+    bfs(start){                //Breadth first search algorithm
 
         let queue=[start]
         let visited=new Set([start])
@@ -67,7 +67,7 @@ class Graph{
     }
 
 
-    dfs(start){
+    dfs(start){           // Depth first search Algorithm
 
 
         let stack=[start]
@@ -92,7 +92,7 @@ class Graph{
     }
 
 
-    removeEdge(vertex1,vertex2){
+    removeEdge(vertex1,vertex2){   // Remove the edges
 
         if(this.adjacencyList[vertex1]){
 
@@ -101,7 +101,7 @@ class Graph{
     }
 
 
-    deleteVertex(vertex){
+    deleteVertex(vertex){        // removing the vertices of the graph
 
         if(!this.adjacencyList[vertex]){
             return
