@@ -53,13 +53,11 @@ class Minheap{
 
             let left= 2*currentIndex+1
             let right=2*currentIndex+2
-            let minIndex
+            let minIndex=left
 
-            if(this.heap[left]<this.heap[right]){
+           
 
-                minIndex=left
-            }if(this.heap[right]<this.heap[left]){
-
+            if(right<this.heap.length && this.heap[right]<this.heap[left]){
                 minIndex=right
             }
 

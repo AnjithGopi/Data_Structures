@@ -222,7 +222,7 @@ class Bst{
     }
 
 
-    deleteNode(root,value){
+    deleteNode(root,value){  // helper to delete 
 
         if(root==null){
             return null
